@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YTDownloader - Download YouTube Videos</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-title">
+                <img src=" {% static 'images/logo.png' %} " alt="YTDownloader Logo" class="logo">
+                <h2 id="title">SAVEYt</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Download YouTube Videos Instantly</h1>
+            <p>Enter the link of any YouTube video below and start your download within seconds!</p>
+            <form action="/download" method="POST">
+                <input type="url" {% static ' name=' %} "video_link" placeholder="Enter YouTube video link" required>
+                <button type="submit">Download Video</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 YTDownloader. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -28,8 +28,9 @@
         <div class="hero-content">
             <h1>Download YouTube Videos Instantly</h1>
             <p>Enter the link of any YouTube video below and start your download within seconds!</p>
-            <form action="/download" method="POST">
-                <input type="url" {% static ' name=' %} "video_link" placeholder="Enter YouTube video link" required>
+            <form action={% url "home" %} method="POST">
+                {% csrf_token %}
+                <input type="url"  placeholder="Enter YouTube video link" name="link" required>
                 <button type="submit">Download Video</button>
             </form>
         </div>

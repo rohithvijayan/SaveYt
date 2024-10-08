@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YTDownloader - Download YouTube Videos</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <!-- Navbar -->
@@ -14,6 +14,10 @@
             <div class="logo-title">
                 <img src=" {% static 'images/logo.png' %} " alt="YTDownloader Logo" class="logo">
             </div>
+            <div class="heading">
+            <h1 id="heading">SAVEYT</h1>
+            <h3 id="heading-tag">DOWNLOAD HD YouTube VIDEOS</h3>
+            </div>
             {% comment %}
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
@@ -21,11 +25,9 @@
                 <li><a href="#">Contact</a></li>
             </ul>        
             {% endcomment %}
-            <div class="title-heading">
-                <h1 id="heading">SaveYT -Download HD YouTube Videos Free</h1>
-            </div>
-        </nav>
 
+        </nav>
+   
     </header>
 
     <!-- Hero Section -->
@@ -35,8 +37,8 @@
             <p>Enter the link of any YouTube video below and start your download within seconds!</p>
             <form action={% url "home" %} method="POST">
                 {% csrf_token %}
-                <input type="url"  placeholder="Enter YouTube video link" name="link" required>
-                <button type="submit">Download Video</button>
+                <input type="url" onfocus="this.value=''" placeholder="Enter YouTube video link" name="link" required>
+              <button type="submit"  >Download Video</button>
             </form>
         </div>
     </section>

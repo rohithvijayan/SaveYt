@@ -1,4 +1,5 @@
 from django.shortcuts import render,HttpResponse
+from django.http import FileResponse
 from pytubefix import YouTube
 import ffmpeg
 from app.models import *
@@ -6,8 +7,6 @@ from django.core.files import File
 import os
 # Create your views here.
 def home(request):
-    return render(request,'home.html')
-'''
     if request.method=="POST":
         url=request.POST['link']
         yt=YouTube(url)
@@ -28,7 +27,7 @@ def home(request):
         os.remove(vid_stream_path) 
         os.remove(final_vid_file_path)
         video.save()
-
+        return FileResponse(video.vid_fle,as_attachment=True)
     return render(request,'home.html')
-'''
+
     

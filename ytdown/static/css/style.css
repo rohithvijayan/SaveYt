@@ -35,8 +35,15 @@ body {
     display: flex;
     align-items: center;
 }
-
-
+#heading {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: inline-gridfle;
+    padding-inline: 28vw;
+    font-size: 1.3vw;
+    font-style: italic;
+    font-weight: bolder;
+}
 .nav-links {
     list-style: none;
     display: flex;

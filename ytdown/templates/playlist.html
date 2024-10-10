@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YTDownloader - Download YouTube Videos</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-title">
+                <img src=" {% static 'images/logo.png' %} " alt="YTDownloader Logo" class="logo">
+            </div>
+            <div class="heading">
+            <h1 id="heading">SAVEYT</h1>
+            <h3 id="heading-tag">DOWNLOAD HD YouTube VIDEOS</h3>
+            <hr>
+            </div>
+            <a href='{% url "home" %}'><button>Download Video</button></a>
+
+            {% comment %}
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>        
+            {% endcomment %}
+
+        </nav>
+   
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Download YouTube PlayList Instantly </h1>
+            <p>Enter the link of any YouTube Playlist below and start your download within seconds!</p>
+            <form action='{% url "playlist_download" %}' method="POST">
+                {% csrf_token %}
+                <input type="url" onfocus="this.value=''" placeholder="Enter PlayList link" name="playlist_link" required>
+              <button type="submit" name="playlist" >Download PlayList</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 YTDownloader. All rights reserved.</p>
+    </footer>
+</body>
+</html>
